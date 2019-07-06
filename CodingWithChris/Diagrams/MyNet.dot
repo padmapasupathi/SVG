@@ -1,0 +1,35 @@
+digraph D {
+  ForestPathnode [label="ForestPath",shape=circle]
+  EmeraldLakenode [label="EmeraldLake",shape=circle]
+  Volcanonode [label="Volcano",shape=circle]
+  LeaveForestPathnode [label="LeaveForestPath",shape=box]
+  LeaveEmeraldLakenode [label="LeaveEmeraldLake",shape=box]
+  LeaveVolcanonode [label="LeaveVolcano",shape=box]
+
+
+  LeaveForestPathnode -> ForestPathnode [arrowhead=none,sametail=ForestPathsame,style=dashed]
+  LeaveForestPathnode -> ForestPathnode [sametail=ForestPathsame,style=dashed]
+
+  LeaveForestPathnode -> ForestPathnode [arrowhead=none,sametail=ForestPathLeaveForestPath4VolcanoVolcano]
+  LeaveForestPathnode -> Volcanonode [label="LeaveForestPath4Volcano",sametail=ForestPathLeaveForestPath4VolcanoVolcano]
+
+  LeaveForestPathnode -> ForestPathnode [arrowhead=none,sametail=ForestPathLeaveForestPath4EmeraldLakeEmeraldLake]
+  LeaveForestPathnode -> EmeraldLakenode [label="LeaveForestPath4EmeraldLake",sametail=ForestPathLeaveForestPath4EmeraldLakeEmeraldLake]
+
+
+  LeaveEmeraldLakenode -> EmeraldLakenode [arrowhead=none,sametail=EmeraldLakesame,style=dashed]
+  LeaveEmeraldLakenode -> EmeraldLakenode [sametail=EmeraldLakesame,style=dashed]
+
+  LeaveEmeraldLakenode -> EmeraldLakenode [arrowhead=none,sametail=EmeraldLakeLeaveEmeraldLake4ForestPathForestPath]
+  LeaveEmeraldLakenode -> ForestPathnode [label="LeaveEmeraldLake4ForestPath",sametail=EmeraldLakeLeaveEmeraldLake4ForestPathForestPath]
+
+
+  LeaveVolcanonode -> Volcanonode [arrowhead=none,sametail=Volcanosame,style=dashed]
+  LeaveVolcanonode -> Volcanonode [sametail=Volcanosame,style=dashed]
+
+  LeaveVolcanonode -> Volcanonode [arrowhead=none,sametail=VolcanoLeaveVolcano4ForestPathForestPath]
+  LeaveVolcanonode -> ForestPathnode [label="LeaveVolcano4ForestPath",sametail=VolcanoLeaveVolcano4ForestPathForestPath]
+
+
+
+}
