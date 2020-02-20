@@ -106,9 +106,9 @@ update msg model =
                                 scrambledWord=model.scrambledWord++(String.slice n (n+1) currentWordLeft)
                             }, generateRandomIndex  stringOfWordLeft   )
          --scrambledWord = arrayOfWord
-        
+
         RevealNext -> ( { model | numRevealed=model.numRevealed+1 }, Cmd.none )
-0
+
 
         ClickedLetter ch ->  if (String.fromChar ch )== (String.slice model.numRevealed (model.numRevealed+1) model.word) then
                                 ({model| numRevealed=model.numRevealed+1,score=model.score+2 , guessedOneWrong=False, solved= (model.numRevealed>=(length model.word)-1) }  , Cmd.none)
@@ -132,12 +132,12 @@ view model =
         [ (group <| model.shape { time = model.time }) --display shape
             |> clip (square 100 |> ghost)
             |> scale 2
-        --, text (slice 0 1 model.word)
+        , text ( model.word)
             -- display word
-          --  |> centered
-        --  |> size 24
-        --    |> filled black
-        --    |> move ( 0, -150 )
+           |> centered
+        |> size 24
+            |> filled black
+            |> move ( 0, -150 )
 
 
         , drawLetters model.word 0 model.numRevealed
