@@ -1,0 +1,8 @@
+# ^ symbol is used to match the first letter
+# eg: cat sample | grep ^a ## it displays only words starts with a
+# cat sample | grep a ## returns all words with a at any position
+# cat sample | grep t$ ## returns all words ends with t
+# cat sample | grep -E p\{2} ## returns all words which has p with two occurance
+# cat sample | grep "a\+t" ## prints all words which has a then t
+
+
